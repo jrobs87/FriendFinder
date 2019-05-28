@@ -1,4 +1,4 @@
-# Project Title
+# FriendFinder
 
 One Paragraph of project description goes here
 

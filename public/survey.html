@@ -240,7 +240,7 @@
                 $('#form-email').addClass('border-valid');
             }
 
-            // validate profile photo
+            // validate profile photo (add file extension jpg, svg, png using char/delimt at period?)
             if (profile.photo === '') {
                 $('#form-photo-feedback').text('Please upload a profile photo.');
 
@@ -296,6 +296,15 @@
             // ajax POST request
             if (valid === true) {
                 console.log('Ready to send.')
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/friends",
+                    data: JSON.stringify(profile),
+                    success: success,
+                    dataType: json
+                });
+
             } else {
                 console.log('Not ready to send.')
             }
