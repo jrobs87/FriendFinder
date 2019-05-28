@@ -1,0 +1,32 @@
+body {
+    font-family: 'Questrial', sans-serif;
+}
+
+.hero {
+    background: lightgray;
+    padding: 3em;
+    border-radius: 0.5em;
+}
+
+.validation-feedback {
+    margin: .25em 0 0 0;
+    /* font-style: italic; */
+    font-size: 0.75em;
+}
+
+.text-invalid {
+    color: red;
+    border-color: red;
+}
+
+.text-valid {
+    color: green;
+}
+
+.border-invalid {
+    border-color: red;
+}
+
+.border-valid {
+    border-color: green;
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Friend Finder - Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <form>
+                    <br>
+                    <h3>Profile Information</h3>
+                    <p>Let's get that profile set up!</p>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Full Name</label>
+                        <input type="email" class="form-control" id="form-name" placeholder="Jack Sparrow">
+                        <div class="validation-feedback" id="form-name-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="form-email"
+                            placeholder="captainJack@blackPearl.com">
+                        <div class="validation-feedback" id="form-email-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Profile Photo</label>
+                        <input type="file" class="form-control-file" id="form-img">
+                        <div class="validation-feedback" id="form-photo-feedback"></div>
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Survey Questions</h3>
+                    <p>Fill in the answers below from 1-5. 1 is strongly disagree. 5 is strongly agree.</p>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Empathy is an important quality.</label>
+                        <select class="form-control" id="form-question-0">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-0"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Animals are awesome!</label>
+                        <select class="form-control needs-validation" id="form-question-1">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-1"></div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="exampleFormControlSelect1">Social gatherings are my time to recharge.</label>
+                        <select class="form-control" id="form-question-2">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-2"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Reading is very important.</label>
+                        <select class="form-control" id="form-question-3">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-3"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">I prefer mountains over beaches.</label>
+                        <select class="form-control" id="form-question-4">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">I love to explore nature.</label>
+                        <select class="form-control" id="form-question-5">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-5"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Family is very important to me.</label>
+                        <select class="form-control" id="form-question-6">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-6"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Mornings are the worst.</label>
+                        <select class="form-control" id="form-question-7">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-7"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">I enjoy experiencing new cultures.</label>
+                        <select class="form-control" id="form-question-8">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-8"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">This survey is too long.</label>
+                        <select class="form-control" id="form-question-9">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="validation-feedback" id="val-9"></div>
+                    </div> -->
+                    <br>
+                    <button type="submit" class="btn btn-dark" id="form-submit">Submit</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        // Form submission validation
+        $('#form-submit').on('click', function () {
+            event.preventDefault();
+
+            let profile = {
+                name: $('#form-name').val(),
+                email: $('#form-email').val(),
+                photo: $('#form-img').val(),
+                answers: []
+            };
+
+            // console.log(profile); // TEST show profile 
+
+            // Validating each input
+            let valid = true; // true allows submission, false prevents submission
+
+            // validate profile name
+            if (profile.name === '') {
+                $('#form-name-feedback').text('Please enter your name.');
+
+                $('#form-name-feedback').removeClass('text-valid');
+                $('#form-name').removeClass('border-valid');
+
+                $('#form-name-feedback').addClass('text-invalid');
+                $('#form-name').addClass('border-invalid');
+
+                valid = false;
+            } else {
+                $('#form-name-feedback').text('All good!');
+
+                $('#form-name-feedback').removeClass('text-invalid');
+                $('#form-name').removeClass('border-invalid');
+
+                $('#form-name-feedback').addClass('text-valid');
+                $('#form-name').addClass('border-valid');
+            }
+
+            // validate profile email
+            if (profile.email === '') {
+                $('#form-email-feedback').text('Please enter your email address.');
+
+                $('#form-email-feedback').removeClass('text-valid');
+                $('#form-email').removeClass('border-valid');
+
+                $('#form-email-feedback').addClass('text-invalid');
+                $('#form-email').addClass('border-invalid');
+
+                valid = false;
+            } else {
+                $('#form-email-feedback').text('All good!');
+
+                $('#form-email-feedback').removeClass('text-invalid');
+                $('#form-email').removeClass('border-invalid');
+
+                $('#form-email-feedback').addClass('text-valid');
+                $('#form-email').addClass('border-valid');
+            }
+
+            // validate profile photo
+            if (profile.photo === '') {
+                $('#form-photo-feedback').text('Please upload a profile photo.');
+
+                $('#form-photo-feedback').removeClass('text-valid');
+                $('#form-photo').removeClass('border-valid');
+
+                $('#form-photo-feedback').addClass('text-invalid');
+                $('#form-photo').addClass('border-invalid');
+
+                valid = false;
+            } else {
+                $('#form-photo-feedback').text('All good!');
+
+                $('#form-photo-feedback').removeClass('text-invalid');
+                $('#form-photo').removeClass('border-invalid');
+
+                $('#form-photo-feedback').addClass('text-valid');
+                $('#form-photo').addClass('border-valid');
+            }
+
+            for (i = 0; i < 10; i++) {
+                // pushes anwsers to the profile.answers property array
+                profile.answers.push($('#form-question-' + i).val())
+
+                // loops thru all responses to update valid/invalid classes
+                if ($('#form-question-' + i).val() === '') {
+                    // update message
+                    $('#val-' + i).text('Oops! Please select an answer (1 is strongly disagree. 5 is strongly agree).')
+
+                    // remove valid classes
+                    $('#val-' + i).removeClass('text-valid');
+                    $('#form-question-' + i).removeClass('border-valid');
+
+                    // add invalid classes
+                    $('#val-' + i).addClass('text-invalid');
+                    $('#form-question-' + i).addClass('border-invalid');
+
+                    valid = false; // any null value prevents submission
+                } else {
+                    // update message
+                    $('#val-' + i).text('All good!');
+
+                    // remove invalid classes
+                    $('#val-' + i).removeClass('text-invalid');
+                    $('#form-question-' + i).removeClass('border-invalid');
+
+                    // add valid classes
+                    $('#form-question-' + i).addClass('border-valid');
+                    $('#val-' + i).addClass('text-valid');
+                }
+            }
+
+            // ajax POST request
+            if (valid === true) {
+                console.log('Ready to send.')
+            } else {
+                console.log('Not ready to send.')
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
