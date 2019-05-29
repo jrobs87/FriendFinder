@@ -11,20 +11,21 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Friend Finder - Survey</title>
+    <title>FriendFinder - Survey</title>
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid" style="background: lightblue">
+    <div class="jumbotron jumbotron-fluid"
+        style="background-image: url(background.jpg); background-repeat: no-repeat; background-size: cover">
         <div class="container">
-            <h1 class="display-4">Get started with Friend Finder!</h1>
-            <p class="lead">Fill out your profile below and find your best mate today.</p>
+            <h1 class="display-4" style="color: white">Get started</h1>
+            <p class="lead" style="color: white">Fill out your profile below and find your best mate today.</p>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-md-4">
                 <br>
                 <form>
                     <br>
@@ -36,7 +37,7 @@
                         <input type="email" class="form-control" id="form-name" placeholder="Jack Sparrow">
                         <div class="validation-feedback" id="form-name-feedback"></div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
                         <input type="email" class="form-control" id="form-email"
                             placeholder="captainJack@blackPearl.com">
@@ -46,7 +47,7 @@
                         <label for="exampleFormControlFile1">Profile Photo</label>
                         <input type="file" class="form-control-file" id="form-img">
                         <div class="validation-feedback" id="form-photo-feedback"></div>
-                    </div>
+                    </div> -->
                     <br>
                     <br>
                     <h3>Survey Questions</h3>
@@ -180,30 +181,40 @@
         </div>
     </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-      </button>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">FriendFinder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-content-invalid">
+                        Oops! Please fill in the missing fields in red.
+                    </div>
+                    <div id="modal-content-valid">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Profile</h5>
+                                <p class="card-text">Meet your new best friend.</p>
+                                <a href="#" class="btn btn-primary">Add Friend</a>
+                                <a href="#" class="btn btn-primary btn-light">Message</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-dark" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-              Oops!  Fields in red need some love.  
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-dark" data-dismiss="modal">Okay</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -224,8 +235,6 @@
                 photo: $('#form-img').val(),
                 answers: []
             };
-
-            // console.log(profile); // TEST show profile 
 
             // validating each input
             let valid = true; // true allows submission, false prevents submission
@@ -333,20 +342,29 @@
                     type: "POST",
                     url: "/api/friends",
                     data: profile,
-                    success: function(data) {
+                    success: function (data) {
                         console.log('Success!');
                         console.log(data);
-                        alert(`Your best match is ${data.name}!`);
+
+                        // display the user's best match name
+                        $('.card-title').text(data.name);
+                        $('.card-img-top').attr('src', data.photo);
+                        
+                        // conditionally show match results or validation prompt
+                        $('#modal-content-invalid').css('display', 'none');
+                        $('#modal-content-valid').css('display', '');
                     }
                 });
 
             } else {
                 console.log('Not ready to send.')
-                // display the modal informing user about missing fields.
-                $('#exampleModal').modal('show');
+                
+                // conditionally show match results or validation prompt
+                $('#modal-content-valid').css('display', 'none');
+                $('#modal-content-invalid').css('display', '');
             }
+            $('#modal').modal('show'); // show results modal
         })
-
 
     </script>
 </body>

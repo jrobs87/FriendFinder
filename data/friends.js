@@ -1,7 +1,7 @@
 let profiles = [
     {
-        name: 'Sweet Dee',
-        photo: '',
+        name: 'Anne',
+        photo: 'anne.jpg',
         answers: [
             1,
             1,
@@ -16,8 +16,8 @@ let profiles = [
         ]
     },
     {
-        name: 'Frank Reynolds',
-        photo: '',
+        name: 'Andrew',
+        photo: 'andrew.jpg',
         answers: [
             1,
             1,
@@ -26,8 +26,24 @@ let profiles = [
             1,
             1,
             1,
-            4,
-            3,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        name: 'Courtney',
+        photo: 'courtney.jpg',
+        answers: [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
             5
         ]
     }

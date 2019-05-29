@@ -3,10 +3,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const path = require('path');
-const fs = require('fs');
+const path = require('path'); // dont need 
 
-const friends = require('./data/friends.js')
+const friends = require('./data/friends.js') // path would elimanate the need for this ././/
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -31,31 +30,38 @@ app.get('/survey', (req, res) => res.sendFile(path.join(__dirname + '/public/sur
 app.post('/api/friends', (req, res) => {
     // console.log(req.body);
     let user = req.body;
+    console.log('User input received.');
+    console.log(user);
     
     // friends.profiles.push(req.body);
-    console.log(friends.profiles);
-    
-    let currentDiff = 10;
+    // console.log(friends.profiles);
+
+    let currentDiff = 100;
     let currentMatch = '';
 
     for (i = 0; i < friends.profiles.length; i ++) {
         diff = 0;
+
         let profile = friends.profiles[i];
+
         for (z = 0; z < 10; z ++) {
             test = Math.abs(user.answers[z] - profile.answers[z]);
             diff =+ test;
+            
         }
-      console.log(diff);
+
+        console.log(`${profile.name} diff is ${diff}`)
+
       if (diff < currentDiff) {
-          console.log('New Match!');
           currentDiff = diff;
           currentMatch = profile;
       }
-      console.log(`Your best match is ${currentMatch.name}`);
-    }
 
-    res.send(currentMatch)}); // works, now to append the array in the file
+    }
+    console.log(`Best match is ${currentMatch.name}`);
+
+    res.send(currentMatch)}); // send match back to caller (submit function in survey.html)
 
 // ===============================================================================================
 
-app.listen(port, () => console.log(`Friend Finder App listening on port ${port}!`))
+app.listen(port, () => console.log(`FriendFinder App listening on port ${port}!`)) // fire up the server!
