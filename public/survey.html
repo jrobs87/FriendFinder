@@ -15,6 +15,13 @@
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid" style="background: lightblue">
+        <div class="container">
+            <h1 class="display-4">Get started with Friend Finder!</h1>
+            <p class="lead">Fill out your profile below and find your best mate today.</p>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -69,7 +76,7 @@
                         </select>
                         <div class="validation-feedback" id="val-1"></div>
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="exampleFormControlSelect1">Social gatherings are my time to recharge.</label>
                         <select class="form-control" id="form-question-2">
                             <option></option>
@@ -164,7 +171,7 @@
                             <option>5</option>
                         </select>
                         <div class="validation-feedback" id="val-9"></div>
-                    </div> -->
+                    </div>
                     <br>
                     <button type="submit" class="btn btn-dark" id="form-submit">Submit</button>
                 </form>
@@ -172,6 +179,31 @@
             </div>
         </div>
     </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Oops!  Fields in red need some love.  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-dark" data-dismiss="modal">Okay</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -195,7 +227,7 @@
 
             // console.log(profile); // TEST show profile 
 
-            // Validating each input
+            // validating each input
             let valid = true; // true allows submission, false prevents submission
 
             // validate profile name
@@ -240,7 +272,7 @@
                 $('#form-email').addClass('border-valid');
             }
 
-            // validate profile photo (add file extension jpg, svg, png using char/delimt at period?)
+            // validate profile photo (add file extension jpg, svg, png using char/delimit at period?)
             if (profile.photo === '') {
                 $('#form-photo-feedback').text('Please upload a profile photo.');
 
@@ -263,7 +295,7 @@
 
             for (i = 0; i < 10; i++) {
                 // pushes anwsers to the profile.answers property array
-                profile.answers.push($('#form-question-' + i).val())
+                profile.answers.push($('#form-question-' + i).val());
 
                 // loops thru all responses to update valid/invalid classes
                 if ($('#form-question-' + i).val() === '') {
@@ -300,13 +332,18 @@
                 $.ajax({
                     type: "POST",
                     url: "/api/friends",
-                    data: JSON.stringify(profile),
-                    success: success,
-                    dataType: json
+                    data: profile,
+                    success: function(data) {
+                        console.log('Success!');
+                        console.log(data);
+                        alert(`Your best match is ${data.name}!`);
+                    }
                 });
 
             } else {
                 console.log('Not ready to send.')
+                // display the modal informing user about missing fields.
+                $('#exampleModal').modal('show');
             }
         })
 
