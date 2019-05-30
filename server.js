@@ -34,7 +34,7 @@ app.get('/api/friends', (req, res) => {
     // res.send(friends);
     // res.json({ friends })
     // res.send(friends);
-    res.json(friends)
+    res.send(friends)
 });
 
 
