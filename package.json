@@ -4,7 +4,7 @@
   "description": "Friend Finder dating app - fullstack node app!",
   "main": "friends.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "John Robertson",

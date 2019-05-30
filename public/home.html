@@ -15,25 +15,28 @@
 </head>
 
 <body>
-        <div class="jumbotron jumbotron-fluid" style="background-image: url(lady.jpg); background-repeat: no-repeat; background-size: cover">
-            <div class="container">
-                    <h1 class="display-4" style="color: white">Welcome to Friend Finder</h1>
-                    <p class="lead" style="color: white">We connect humans with one another.</p>
-                    <hr class="my-4" style="background: white">
-                    <p style="color: white">Just fill out a survey to find your new best friend, today!</p>
-                    <p class="lead" style="color: white">
-                      <a class="btn btn-primary btn-lg btn-light" href="/survey" role="button">Take the Survey</a>
-                    </p>
+    <div class="jumbotron jumbotron-fluid"
+        style="background-image: url(background.jpg); background-repeat: no-repeat; background-size: cover">
+        <div class="container">
+            <h1 class="display-4" style="color: white">Welcome to FriendFinder</h1>
+            <p class="lead" style="color: white">We connect humans with one another.</p>
+            <hr class="my-4" style="background: white">
+            <p style="color: white">Just fill out a survey to find your new best friend, today!</p>
+            <p class="lead" style="color: white">
+                <a class="btn btn-primary btn-lg btn-light" href="/survey" role="button">Take the Survey</a>
+            </p>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" id="api-endpoint" class="btn btn-link">API Friends List</button>
+                <button type="button" class="btn btn-link">
+                    <a href="https://github.com/jrobs87/FriendFinder" target="blank">GitHub Repo</a></button>
             </div>
-           
-              </div>
-<div class="container-fluid" >
-    <div class="row">
-        <div class="col">
-               
         </div>
     </div>
-</div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
@@ -43,6 +46,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            console.log('Welcome to FriendFinder!');
+
+            $('#api-endpoint').on('click', function () {
+                console.log('Requesting JSON');
+
+                $.ajax({
+                    type: "GET",
+                    url: "/api/friends",
+                    // data: data,
+                    success: function (data) {
+                        console.log(data);
+                        document.write('Open Console to view the JSON response.');   
+                    }
+                });
+            })
+        });
+    </script>
 </body>
 
 </html>
