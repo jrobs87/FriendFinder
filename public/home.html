@@ -37,9 +37,9 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -47,23 +47,29 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script>
+
+        // get request for API data
         $(document).ready(function () {
+
             console.log('Welcome to FriendFinder!');
 
+            // post request to send user data for matching function
             $('#api-endpoint').on('click', function () {
-                console.log('Requesting JSON');
+
+                console.log('Requesting API data');
 
                 $.ajax({
                     type: "GET",
-                    url: "/api/friends",
+                    url: "/api/friends/data",
                     // data: data,
                     success: function (data) {
-                        console.log(data);
-                        document.write('Open Console to view the API endpoint. Refresh the page to return home.');   
+                        console.log(data); // logs the API data response
+                        document.write('Check the console for API data.  Refresh the page to return home.'); // sub the data for a message (shows as Object Object otherwise?)
                     }
                 });
             })
         });
+        
     </script>
 </body>
 

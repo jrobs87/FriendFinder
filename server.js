@@ -2,9 +2,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000;
-
-const path = require('path'); // dont need 
-
+const path = require('path'); 
 const friends = require('./data/friends.js') // path would elimanate the need for this ././/
 
 // Sets up the Express app to handle data parsing
@@ -18,57 +16,58 @@ app.use(express.static(__dirname + '/public'));
 
 // ===============================================================================================
 
-// HTML routes 
+// home html route
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/home.html')))
 
-// why is public not needed?  because of the realtive filepath?
+// survey html route
 app.get('/survey', (req, res) => res.sendFile(path.join(__dirname + '/public/survey.html')))
 
 // ===============================================================================================
 
-// API routes
-app.get('/api/friends', (req, res) => {
+// API routes - this is not showing in the HTML and I can't figure out why - same methods works in other work I have done....
+// home.html is just writing out a note to check the console and the API data is logged to the console as a stand-in
+app.get('/api/friends/data', (req, res) => {
     console.log('API Endpoint Requested');
-
-    // res.write(JSON.stringify(friends));
-    // res.send(friends);
-    // res.json({ friends })
-    // res.send(friends);
-    res.send(friends)
+    res.send(friends);
 });
 
-
-// API routes
+// route to handle user data submission, comparison, and best match response
 app.post('/api/friends', (req, res) => {
+
     console.log('User input received.');
-let user = req.body;
-    let currentDiff = 100;
-    let currentMatch = '';
 
+    let user = req.body;
+    console.log(req.body);
+
+    // variables to hold our comparison objects
+    let matchDiff = 100;
+    let bestMatch = '';
+
+    // outer loops for comparison - cycles thru profiles
     for (i = 0; i < friends.profiles.length; i++) {
-        diff = 0;
 
-        let profile = friends.profiles[i];
+        let currentDiff = 0; // holds the loop-specific differnce in answers
+        let profile = friends.profiles[i]; // holds the current profile for comparison
 
+        // inner loop compares all answers from user and profiles
         for (z = 0; z < 10; z++) {
             test = Math.abs(user.answers[z] - profile.answers[z]);
-            diff = + test;
-
+            currentDiff =+ test;
         }
 
-        console.log(`${profile.name} diff is ${diff}`)
-
-        if (diff < currentDiff) {
-            currentDiff = diff;
-            currentMatch = profile;
+        // set new best match if currentDiff is less than current
+        if (currentDiff < matchDiff) {
+            matchDiff = currentDiff;
+            bestMatch = profile;
         }
-
     }
-    console.log(`Best match is ${currentMatch.name}`);
 
-    res.send(currentMatch)
-}); // send match back to caller (submit function in survey.html)
+    console.log(`Best match is ${bestMatch.name}`); // server log the best match
+
+    res.send(bestMatch); // send match back to caller (submit function in survey.html)
+}); 
 
 // ===============================================================================================
 
-app.listen(port, () => console.log(`FriendFinder App listening on port ${port}!`)) // fire up the server!
+// launch the server and start the app
+app.listen(port, () => console.log(`FriendFinder App listening on port ${port}!`));
