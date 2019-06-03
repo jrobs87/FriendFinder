@@ -29,7 +29,7 @@ app.get('/survey', (req, res) => res.sendFile(path.join(__dirname + '/public/sur
 app.get('/api/friends/data', (req, res) => {
     console.log('API Endpoint Requested');
     res.setHeader('Content-Type', 'application/json');
-    // res.send(profiles);
+    // res.send(profiles); // testing json
     res.send(friends);
 });
 
