@@ -1,4 +1,4 @@
-let profiles = [
+const profiles = [
     {
         name: 'Anne',
         photo: '/img/anne.jpg',
@@ -115,4 +115,4 @@ let profiles = [
 
 // console.log(JSON.stringify(profiles)); // test
 
-exports.profiles = profiles;
+module.exports = profiles;

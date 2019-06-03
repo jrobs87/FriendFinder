@@ -31,7 +31,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <button type="button" id="api-endpoint" class="btn btn-link">API Friends List</button>
+                    <a href="/api/friends/data">API Friends Link</a>
+                <button type="button" id="api-endpoint" class="btn btn-link">API (consumable)</button>
                 <button type="button" class="btn btn-link">
                     <a href="https://github.com/jrobs87/FriendFinder" target="blank">GitHub Repo</a></button>
             </div>
@@ -48,7 +49,7 @@
         crossorigin="anonymous"></script>
     <script>
 
-        // get request for API data
+        // get request for API data - optional (normal href to API endpoint also provides - this is set up as if we were consuming the data)
         $(document).ready(function () {
 
             console.log('Welcome to FriendFinder!');
