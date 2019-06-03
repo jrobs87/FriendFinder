@@ -1,10 +1,10 @@
 # FriendFinder
 
-One Paragraph of project description goes here
+Node JS Express app that connects people basedon survey anwers.  Users fill out a survey and are matched with a profile that best mirrors the user responses.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone the repo and run npm i.  No database setup needed.
 
 ### Prerequisites
 
@@ -34,47 +34,40 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+No tests exist for v1.0
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+n/a
 
-```
-Give an example
-```
 
 ### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+n/a
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Currently deployed on Heroku.  In order to deploy your copy, set up a Heroku account and follow their instructions.
+I presonally suggest deploying via CLI - jsut a handful of commands gets you up and running very easily.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [express](http://www.dropwizard.io/1.0.2/docs/) - Node routing library
+* [nodemon](https://maven.apache.org/) - Dev dependency that refreshes server on file changes
+
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Send me a PR on GitHub
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Current stable version is v1.0
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **John Robertson** - *Initial work* - [portfolio site](https://github.com/PurpleBooth)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -82,6 +75,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thanks to TAs Matthew and Meguel for explaining routing insuch detail - much appreciated.
