@@ -16,7 +16,7 @@
 
 <body>
     <div class="jumbotron jumbotron-fluid"
-        style="background-image: url(background.jpg); background-repeat: no-repeat; background-size: cover">
+        style="background-image: url(/img/background.jpg); background-repeat: no-repeat; background-size: cover">
         <div class="container">
             <h1 class="display-4" style="color: white">Welcome to FriendFinder</h1>
             <p class="lead" style="color: white">We connect humans with one another.</p>
@@ -61,10 +61,12 @@
                 $.ajax({
                     type: "GET",
                     url: "/api/friends/data",
-                    success: function (data) {
+                     success: function (data) {
                         console.log(data); // logs the API data response
-                        document.write('Check the console for API data.  Refresh the page to return home.'); // sub the data for a message (shows as Object Object otherwise?)
-                    }
+                        // data = JSON.stringify(data);
+                        // document.write(data);
+                         document.write('Check the console for API data.  Refresh the page to return home.'); // sub the data for a message (shows as Object Object otherwise?)
+                    } 
                 });
             })
         });

@@ -1,8 +1,8 @@
-let profiles = [
+[
     {
-        name: 'Anne',
-        photo: '/img/anne.jpg',
-        answers: [
+        "name": "Anne",
+        "photo": "/img/anne.jpg",
+        "answers": [
             1,
             1,
             1,
@@ -16,9 +16,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Andrew',
-        photo: '/img/andrew.jpg',
-        answers: [
+        "name": "Andrew",
+        "photo": "/img/andrew.jpg",
+        "answers": [
             5,
             5,
             5,
@@ -32,9 +32,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Courtney',
-        photo: '/img/courtney.jpg',
-        answers: [
+        "name": "Courtney",
+        "photo": "/img/courtney.jpg",
+        "answers": [
             5,
             5,
             5,
@@ -48,9 +48,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Sam',
-        photo: '/img/sam.jpg',
-        answers: [
+        "name": "Sam",
+        "photo": "/img/sam.jpg",
+        "answers": [
             2,
             2,
             2,
@@ -64,9 +64,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Addie',
-        photo: '/img/Addie.jpg',
-        answers: [
+        "name": "Addie",
+        "photo": "/img/Addie.jpg",
+        "answers": [
             1,
             2,
             1,
@@ -80,9 +80,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Andy',
-        photo: '/img/andy.jpg',
-        answers: [
+        "name": "Andy",
+        "photo": "/img/andy.jpg",
+        "answers": [
             5,
             3,
             5,
@@ -96,9 +96,9 @@ let profiles = [
         ]
     },
     {
-        name: 'Phillip',
-        photo: '/img/Phillip.jpg',
-        answers: [
+        "name": "Phillip",
+        "photo": "/img/Phillip.jpg",
+        "answers": [
             3,
             4,
             4,
@@ -111,8 +111,4 @@ let profiles = [
             2
         ]
     }
-];
-
-// console.log(JSON.stringify(profiles)); // test
-
-exports.profiles = profiles;
+]

@@ -8,29 +8,12 @@ Clone the repo and run npm i.  No database setup needed.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+[node.js and npm](https://www.npmjs.com/get-npm)
+[heroku](https://dashboard.heroku.com/login)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+run npm i to install dependencies.
 
 ## Running the tests
 
@@ -47,14 +30,13 @@ n/a
 
 ## Deployment
 
-Currently deployed on Heroku.  In order to deploy your copy, set up a Heroku account and follow their instructions.
-I presonally suggest deploying via CLI - jsut a handful of commands gets you up and running very easily.
+Currently deployed on Heroku (https://friendfinder-gt.herokuapp.com/).  In order to deploy your copy, set up a Heroku account and follow their instructions.
+
+I presonally suggest deploying via CLI - just a handful of commands gets you up and running very easily.
 
 ## Built With
 
-* [express](http://www.dropwizard.io/1.0.2/docs/) - Node routing library
-* [nodemon](https://maven.apache.org/) - Dev dependency that refreshes server on file changes
-
+* [express](https://www.npmjs.com/package/express) - Node routing module
 
 ## Contributing
 
@@ -75,4 +57,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thanks to TAs Matthew and Meguel for explaining routing insuch detail - much appreciated.
+* Thanks to TAs Matthew and Meguel for explaining routing in such detail - much appreciated.

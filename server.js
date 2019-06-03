@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT || 3000;
 const path = require('path'); 
 const friends = require('./data/friends.js') // path would elimanate the need for this ././/
-
+// const profiles = require('./data/profiles.json'); // testing sending JSON responses
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,6 +28,8 @@ app.get('/survey', (req, res) => res.sendFile(path.join(__dirname + '/public/sur
 // home.html is just writing out a note to check the console and the API data is logged to the console as a stand-in
 app.get('/api/friends/data', (req, res) => {
     console.log('API Endpoint Requested');
+    res.setHeader('Content-Type', 'application/json');
+    // res.send(profiles);
     res.send(friends);
 });
 
