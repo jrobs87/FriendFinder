@@ -61,7 +61,6 @@
                 $.ajax({
                     type: "GET",
                     url: "/api/friends/data",
-                    // data: data,
                     success: function (data) {
                         console.log(data); // logs the API data response
                         document.write('Check the console for API data.  Refresh the page to return home.'); // sub the data for a message (shows as Object Object otherwise?)
