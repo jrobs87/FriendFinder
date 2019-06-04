@@ -1,7 +1,24 @@
+// ====  Express Routes  =========================================================
 
+// Include path get the correct file path for our html
+var path = require("path");
 
-// home html route
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/home.html')))
+// ===============================================================================
 
-// survey html route
-app.get('/survey', (req, res) => res.sendFile(path.join(__dirname + '/public/survey.html')))
+module.exports = function (app) {
+
+    // home
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+
+    // survey form
+    app.get("/survey", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+
+    // Default to home
+    app.get("*", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+}

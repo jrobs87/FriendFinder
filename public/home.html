@@ -47,8 +47,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script>
 
+    <script>
         // get request for API data - optional (normal href to API endpoint also provides - this is set up as if we were consuming the data)
         $(document).ready(function () {
 
@@ -63,15 +63,14 @@
                     type: "GET",
                     url: "/api/friends/data",
                      success: function (data) {
+                        console.log('API data received');
                         console.log(data); // logs the API data response
-                        // data = JSON.stringify(data);
-                        // document.write(data);
                          document.write('Check the console for API data.  Refresh the page to return home.'); // sub the data for a message (shows as Object Object otherwise?)
                     } 
                 });
             })
         });
-        
+    
     </script>
 </body>
 

@@ -245,6 +245,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
     <!-- script to validate and submit form and display results -->
     <script>
 
@@ -404,6 +405,7 @@
 
     </script>
 
+<!-- ajax request script -->
     <script>
 
         // get request for API data
@@ -419,8 +421,8 @@
                 $.ajax({
                     type: "GET",
                     url: "/api/friends/data",
-                    // data: data,
                     success: function (data) {
+                        console.log('API data received');
                         console.log(data); // logs the API data response
                         document.write('Check the console for API data.  Refresh the page to return to survey.'); // sub the data for a message (shows as Object Object otherwise?)
                     }
