@@ -191,7 +191,7 @@
 
 
     <!-- github and api links -->
-    <div class="container">
+    <div class="container" style="margin-bottom: 3em">
         <div class="row">
             <div class="col">
                 <a href="/api/friends/data">API Friends Link</a>
@@ -424,7 +424,7 @@
                     success: function (data) {
                         console.log('API data received');
                         console.log(data); // logs the API data response
-                        document.write('Check the console for API data.  Refresh the page to return to survey.'); // sub the data for a message (shows as Object Object otherwise?)
+                        alert('API response logged to console.'); // alert the use on API response
                     }
                 });
             })
