@@ -37,6 +37,7 @@ I presonally suggest deploying via CLI - just a handful of commands gets you up 
 ## Built With
 
 * [express](https://www.npmjs.com/package/express) - Node routing module
+* [bootstrap](https://getbootstrap.com/) - Node routing module
 
 ## Contributing
 
@@ -48,7 +49,7 @@ Current stable version is v1.0
 
 ## Authors
 
-* **John Robertson** - *Initial work* - [portfolio site](https://github.com/PurpleBooth)
+* **John Robertson** - *Initial work* - [portfolio site](https://jrobs87.github.io/portfolio-v3.0/#home)
 
 
 ## License
